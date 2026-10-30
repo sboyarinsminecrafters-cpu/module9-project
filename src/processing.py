@@ -12,3 +12,4 @@ def sort_by_date(operations: list[dict], reverse: bool = True) -> list[dict]:
     """Сортируем список операций по дате"""
     sorted_operations = sorted(operations, key=lambda operation: operation.get("date", ""), reverse=reverse)
     return sorted_operations
+#testest
