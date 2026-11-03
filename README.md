@@ -59,3 +59,22 @@ operations = [
 print(filter_by_state(operations))
 # Вывод: [{'id': 1, 'state': 'EXECUTED', ...}]
 ```
+
+### Генераторы для работы с транзакциями (модуль `generators`)
+Для эффективной работы с большими объемами данных реализованы функции-генераторы.
+
+- `filter_by_currency(transactions, currency)` — возвращает итератор с транзакциями в заданной валюте.
+- `transaction_descriptions(transactions)` — поочередно выдает описания транзакций.
+- `card_number_generator(start, stop)` — генерирует номера банковских карт в заданном диапазоне.
+
+**Пример использования:**
+```python
+from src.generators import filter_by_currency, card_number_generator
+
+# Фильтрация по валюте USD
+usd_transactions = filter_by_currency(transactions, "USD")
+
+# Генерация номеров карт от 1 до 5
+for card in card_number_generator(1, 5):
+    print(card)
+# Вывод: 0000 0000 0000 0001 ... 0000 0000 0000 0005
