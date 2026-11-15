@@ -59,3 +59,14 @@ operations = [
 print(filter_by_state(operations))
 # Вывод: [{'id': 1, 'state': 'EXECUTED', ...}]
 ```
+
+## Тестирование
+Для запуска тестов используется библиотека `pytest`.
+Чтобы запустить все тесты, выполните:
+`poetry run pytest`
+
+Для проверки покрытия кода тестами:
+`poetry run pytest --cov=src`
+
+Для генерации HTML-отчета о покрытии (сохраняется в папку `htmlcov`):
+`poetry run pytest --cov=src --cov-report=html`
